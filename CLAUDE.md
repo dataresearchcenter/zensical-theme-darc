@@ -18,11 +18,10 @@ There are no tests or linters — this is a static-site config repo. Validate ch
 
 ## Architecture
 
-The site's appearance comes from three layers stacked in `mkdocs.yml` under `extra_css` — order matters:
+The site's appearance comes from two layers stacked in `mkdocs.yml` under `extra_css` — order matters:
 
-1. **DARC fonts CDN** (`cdn.investigativedata.org/style/fonts.min.css`) — provides `@font-face` for Inter + Sligoil Micro.
-2. **`docs/stylesheets/darc-zensical.css`** — the shared DARC design system (palette tokens, per-scheme admonition/syntax colors, typography, hero + stats components). **This file is shared across all DARC docs sites and must stay in sync upstream.** Do not put project-specific tweaks here; copy design-system improvements back upstream instead.
-3. **`docs/stylesheets/extra.css`** — project-specific overrides. Loaded last so it wins. Add per-site styling here.
+1. **`docs/stylesheets/darc-zensical.css`** — the shared DARC design system. Declares `@font-face` for Inter + Sligoil Micro (font files served from `cdn.investigativedata.org/style/fonts/…`) and holds palette tokens, per-scheme admonition/syntax colors, typography, and hero + stats components. **This file is shared across all DARC docs sites and must stay in sync upstream.** Do not put project-specific tweaks here; copy design-system improvements back upstream instead.
+2. **`docs/stylesheets/extra.css`** — project-specific overrides. Loaded last so it wins. Add per-site styling here.
 
 ### Home page / hero
 

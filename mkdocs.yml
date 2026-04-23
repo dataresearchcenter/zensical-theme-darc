@@ -32,7 +32,6 @@ theme:
     - content.code.copy
 
 extra_css:
-  - https://cdn.investigativedata.org/style/fonts.min.css
   - stylesheets/darc-zensical.css
   - stylesheets/extra.css
 
