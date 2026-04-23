@@ -1,0 +1,76 @@
+{#-
+  Custom home page using the shared .darc-hero / .darc-stats components.
+  Edit the title / lede / CTAs / stats rows below for your project.
+
+  The page that uses this template should be `index.md` with front-matter:
+
+      ---
+      template: home.html
+      hide:
+        - navigation
+        - toc
+        - footer
+        - path
+        - feedback
+      ---
+-#}
+{% extends "base.html" %}
+
+{% block tabs %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block hero %}
+<section class="darc-hero md-typeset" aria-labelledby="hero-title">
+  <div class="darc-hero__content">
+    <h1 id="hero-title" class="darc-hero__title">
+      Project<br>
+      <em>name</em><br>
+      goes here.
+    </h1>
+
+    <p class="darc-hero__lede">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this
+      paragraph with the one-line value proposition for your project — what
+      it does and who it's for. <strong>Bold the key term.</strong>
+      <br><br>
+      A second paragraph can carry a punchier follow-up, like a benchmark
+      number or a reframing of the problem.
+    </p>
+
+    <div class="darc-hero__cta">
+      <a href="{{ 'getting-started/' | url }}" class="md-button md-button--primary">Get started</a>
+      <a href="{{ 'components/' | url }}" class="md-button">Components</a>
+      {% if config.repo_url %}
+      <a href="{{ config.repo_url }}" class="md-button">
+        {% include ".icons/simple/github.svg" %} GitHub
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <aside class="darc-stats" aria-label="Highlights">
+    <div class="darc-stats__header">
+      <span class="darc-stats__header-dot" aria-hidden="true"></span>
+      highlights
+    </div>
+    <div class="darc-stats__row">
+      <span class="darc-stats__value display-num">FAST</span>
+      <span class="darc-stats__label">replace with a real metric</span>
+    </div>
+    <div class="darc-stats__row">
+      <span class="darc-stats__value display-num">OPEN</span>
+      <span class="darc-stats__label">replace with a feature highlight</span>
+    </div>
+    <div class="darc-stats__row">
+      <span class="darc-stats__value display-num">SIMPLE</span>
+      <span class="darc-stats__label">replace with a feature highlight</span>
+    </div>
+    <div class="darc-stats__row">
+      <span class="darc-stats__value display-num">DARC</span>
+      <span class="darc-stats__label">built with the DARC zensical theme</span>
+    </div>
+  </aside>
+</section>
+{% endblock %}
+
+{% block content %}{% endblock %}
