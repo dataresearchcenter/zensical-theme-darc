@@ -310,6 +310,11 @@
     border-left-color: var(--accent);
 }
 
+/* zensical ≥0.0.36 wraps nav-link text in <span class="md-typeset">, whose
+   global color rule blocks the inherited --active color from reaching the
+   text. Force inner spans to inherit so hover/active colors show through. */
+.md-nav__link .md-typeset { color: inherit; }
+
 /* ═══════════════════════════════════════════════════════════════════
    Article (.md-typeset) — colors only
    ═══════════════════════════════════════════════════════════════════ */
